@@ -1,0 +1,18 @@
+[
+    [
+        "Sousou no Frieren",
+        "RELEASING"
+    ],
+    [
+        "Ginga Eiyuu Densetsu",
+        "FINISHED"
+    ],
+    [
+        "Sousou no Frieren",
+        "RELEASING"
+    ],
+    [
+        "Ore dake Level Up na Ken",
+        "RELEASING"
+    ]
+]
