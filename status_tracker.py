@@ -29,6 +29,11 @@ query ($id: Int, $idMal: Int) { # Define which variables will be used in the que
     status
     season
     seasonYear
+    endDate {
+        year
+        month
+        day
+    }
   }
 }
 '''
@@ -47,7 +52,8 @@ for idMal in idMals:
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
     anime_year = data_readable['data']['Media']['seasonYear']
-    mal_tracked = (anime_name, anime_status, anime_year)
+    anime_enddate = data_readable['data']['Media']['endDate']
+    mal_tracked = (anime_name, anime_status, anime_year, anime_enddate)
     combined_data_mal.append(mal_tracked)
 
 combined_data_anilist = []
@@ -60,7 +66,8 @@ for id in ids:
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
     anime_year = data_readable['data']['Media']['seasonYear']
-    anilist_tracked = (anime_name, anime_status, anime_year)
+    anime_enddate = data_readable['data']['Media']['endDate']
+    anilist_tracked = (anime_name, anime_status, anime_year, anime_enddate)
     combined_data_anilist.append(anilist_tracked)
 
 combined_data = combined_data_anilist + combined_data_mal
