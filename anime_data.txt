@@ -1,26 +1,32 @@
 [
     [
         "Sousou no Frieren",
-        "RELEASING"
+        "RELEASING",
+        2023
     ],
     [
         "Ginga Eiyuu Densetsu",
-        "FINISHED"
+        "FINISHED",
+        1988
     ],
     [
         "Ginga Eiyuu Densetsu",
-        "FINISHED"
+        "FINISHED",
+        1988
     ],
     [
         "Ore dake Level Up na Ken",
-        "RELEASING"
+        "RELEASING",
+        2024
     ],
     [
         "Sousou no Frieren",
-        "RELEASING"
+        "RELEASING",
+        2023
     ],
     [
         "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season",
-        "RELEASING"
+        "RELEASING",
+        2024
     ]
 ]

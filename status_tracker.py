@@ -27,6 +27,8 @@ query ($id: Int, $idMal: Int) { # Define which variables will be used in the que
       native
     }
     status
+    season
+    seasonYear
   }
 }
 '''
@@ -44,7 +46,8 @@ for idMal in idMals:
     data_readable = json.loads(response.text)
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
-    mal_tracked = (anime_name, anime_status)
+    anime_year = data_readable['data']['Media']['seasonYear']
+    mal_tracked = (anime_name, anime_status, anime_year)
     combined_data_mal.append(mal_tracked)
 
 combined_data_anilist = []
@@ -56,12 +59,13 @@ for id in ids:
     data_readable = json.loads(response.text)
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
-    anilist_tracked = (anime_name, anime_status)
+    anime_year = data_readable['data']['Media']['seasonYear']
+    anilist_tracked = (anime_name, anime_status, anime_year)
     combined_data_anilist.append(anilist_tracked)
 
 combined_data = combined_data_anilist + combined_data_mal
 
-with open("temp.txt", "w") as file_temp:
+with open("anime_data.txt", "w") as file_temp:
     # https://docs.python.org/3/library/json.html
     # data_readable and json.dump are used because response.text by default returns utf-8 characters as strings that look like this: \u2019
     json.dump(combined_data, file_temp, ensure_ascii=False, indent=4)
