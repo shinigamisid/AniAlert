@@ -8,11 +8,19 @@
         "FINISHED"
     ],
     [
+        "Ginga Eiyuu Densetsu",
+        "FINISHED"
+    ],
+    [
+        "Ore dake Level Up na Ken",
+        "RELEASING"
+    ],
+    [
         "Sousou no Frieren",
         "RELEASING"
     ],
     [
-        "Ore dake Level Up na Ken",
+        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season",
         "RELEASING"
     ]
 ]
