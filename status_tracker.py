@@ -4,6 +4,7 @@ import json
 idMals = []
 ids = []
 
+# fetches data from the txt file where you have the anime you want to track as MAL or AniList links
 with open("/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime_to_track.txt", "r+") as anime_tracker:
     for anime in anime_tracker:
         if 'myanimelist' in anime:
@@ -38,10 +39,10 @@ query ($id: Int, $idMal: Int) { # Define which variables will be used in the que
 }
 '''
 
-url = 'https://graphql.anilist.co'
+url = 'https://graphql.anilist.co' # queries call to this link
 
-# Define our query variables and values that will be used in the query request
 
+# Fetch data from MAL links
 combined_data_mal = []
 
 for idMal in idMals:
@@ -56,6 +57,7 @@ for idMal in idMals:
     mal_tracked = (anime_name, anime_status, anime_year, anime_enddate)
     combined_data_mal.append(mal_tracked)
 
+# Fetch data from AniList links
 combined_data_anilist = []
 
 for id in ids:
