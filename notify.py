@@ -13,8 +13,8 @@ def send_notification(title, message):
     applescript_command = f'display notification "{message}" with title "{title}"'
     subprocess.run(["osascript", "-e", applescript_command])
 
-with open('anime_data.txt', 'r+') as anime_current_status:
-    anime_info = json.load(anime_current_status)
+with open('anime_data.txt', 'r+') as old_data:
+    anime_info = json.load(old_data)
 
 with open('finished_airing.txt', 'w') as finished_anime:
     for title in anime_info:
