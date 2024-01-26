@@ -1,52 +1,57 @@
 [
-    [
-        "Sousou no Frieren",
-        "RELEASING",
-        2023,
-        {
-            "year": 2024,
-            "month": 3,
-            "day": null
-        }
-    ],
-    [
-        "Ginga Eiyuu Densetsu",
-        "FINISHED",
-        1988,
-        {
+    {
+        "anime_id": 820,
+        "anime_name": "Ginga Eiyuu Densetsu",
+        "anime_status": "FINISHED",
+        "anime_year": 1988,
+        "anime_enddate": {
             "year": 1997,
             "month": 3,
             "day": 17
         }
-    ],
-    [
-        "Ore dake Level Up na Ken",
-        "RELEASING",
-        2024,
-        {
+    },
+    {
+        "anime_id": 151807,
+        "anime_name": "Ore dake Level Up na Ken",
+        "anime_status": "RELEASING",
+        "anime_year": 2024,
+        "anime_enddate": {
             "year": 2024,
             "month": 3,
             "day": 24
         }
-    ],
-    [
-        "Sousou no Frieren",
-        "RELEASING",
-        2023,
-        {
+    },
+    {
+        "anime_id": 154587,
+        "anime_name": "Sousou no Frieren",
+        "anime_status": "RELEASING",
+        "anime_year": 2023,
+        "anime_enddate": {
             "year": 2024,
             "month": 3,
             "day": null
         }
-    ],
-    [
-        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season",
-        "RELEASING",
-        2024,
-        {
+    },
+    {
+        "anime_id": 146066,
+        "anime_name": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season",
+        "anime_status": "RELEASING",
+        "anime_year": 2024,
+        "anime_enddate": {
             "year": 2024,
             "month": 3,
             "day": 27
         }
-    ]
+    },
+    {
+        "anime_id": 154587,
+        "anime_name": "Sousou no Frieren",
+        "anime_status": "RELEASING",
+        "anime_year": 2023,
+        "anime_enddate": {
+            "year": 2024,
+            "month": 3,
+            "day": null
+        }
+    }
 ]

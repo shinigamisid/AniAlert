@@ -5,6 +5,7 @@ It reads the finished_airing.txt file, a list of anime that have finished airing
 import subprocess
 import json
 from datetime import datetime
+from prepare_data import fetch_data
 
 APP_NAME = "AniAlert"
 
@@ -13,18 +14,27 @@ def send_notification(title, message):
     applescript_command = f'display notification "{message}" with title "{title}"'
     subprocess.run(["osascript", "-e", applescript_command])
 
+def status_change(anime_details):
+    old_status = anime_details['anime_status']
+    anime_query_variable = {'id': anime_details['anime_id']}
+    current_data = fetch_data(anime_query_variable)
+    current_status = current_data['anime_status']
+    if old_status != 'FINISHED':
+        if current_status != old_status:
+            return True
+        else:
+            return False
+
 with open('anime_data.txt', 'r+') as old_data:
     anime_info = json.load(old_data)
 
 with open('finished_airing.txt', 'w') as finished_anime:
     for title in anime_info:
-        anime_name = title[0]
-        anime_status = title[1]
-        anime_year = title[2]
-        anime_end_year = title[3]['year']
-        anime_end_month = title[3]['month']
-        anime_end_day = title[3]['day']
-        if anime_status == 'FINISHED':
+        anime_end_year = title['anime_enddate']['year']
+        anime_end_month = title['anime_enddate']['month']
+        anime_end_day = title['anime_enddate']['day']
+        anime_name = title['anime_name']
+        if status_change(title):
             date_number = str(anime_end_year).zfill(4) + str(anime_end_month).zfill(2) + str(anime_end_day).zfill(2)
             end_date = datetime.strptime(date_number, '%Y%m%d').strftime('%d %B, %Y (%A)')
             finished_anime.write(f'{anime_name}' + '\n')
