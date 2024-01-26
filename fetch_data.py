@@ -2,7 +2,7 @@ import requests
 import json
 
 idMals = []
-ids = []
+idAnilists = []
 
 # fetches data from the txt file where you have the anime you want to track as MAL or AniList links
 with open("/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime_to_track.txt", "r+") as anime_tracker:
@@ -14,7 +14,7 @@ with open("/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime
         elif 'anilist' in anime:
             link_separated = anime.rstrip().split('/')
             anilist_id = int(link_separated[4])
-            ids.append(anilist_id)
+            idAnilists.append(anilist_id)
 
 # Here we define our query as a multi-line string
 query = '''
@@ -60,8 +60,8 @@ for idMal in idMals:
 # Fetch data from AniList links
 combined_data_anilist = []
 
-for id in ids:
-    variables = {'id': id}
+for idAnilist in idAnilists:
+    variables = {'id': idAnilist}
     # Make the HTTP Api request
     response = requests.post(url, json={'query': query, 'variables': variables})
     data_readable = json.loads(response.text)
@@ -79,3 +79,8 @@ with open("anime_data.txt", "w") as file_temp:
     # data_readable and json.dump are used because response.text by default returns utf-8 characters as strings that look like this: \u2019
     json.dump(combined_data, file_temp, ensure_ascii=False, indent=4)
     # tuples in python, mal_tracked and anilist_tracked, are converted to arrays in json.
+
+# def fetch_status(anime_id):
+#   variables = {'id': idAnilist}
+#   response = requests.post(url, json={'query': query, 'variables': variables})
+#   read_data = json.loads(response.text)
