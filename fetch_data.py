@@ -17,7 +17,7 @@ with open("/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime
             idAnilists.append(anilist_id)
 
 # Here we define our query as a multi-line string
-query = '''
+ANIME_QUERY = '''
 query ($id: Int, $idMal: Int) { # Define which variables will be used in the query (id)
   Media (id: $id, idMal: $idMal, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
     id
@@ -48,7 +48,7 @@ combined_data_mal = []
 for idMal in idMals:
     variables = {'idMal': idMal}
     # Make the HTTP Api request
-    response = requests.post(url, json={'query': query, 'variables': variables})
+    response = requests.post(url, json={'query': ANIME_QUERY, 'variables': variables})
     data_readable = json.loads(response.text)
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
@@ -63,7 +63,7 @@ combined_data_anilist = []
 for idAnilist in idAnilists:
     variables = {'id': idAnilist}
     # Make the HTTP Api request
-    response = requests.post(url, json={'query': query, 'variables': variables})
+    response = requests.post(url, json={'query': ANIME_QUERY, 'variables': variables})
     data_readable = json.loads(response.text)
     anime_name = data_readable['data']['Media']['title']['romaji']
     anime_status = data_readable['data']['Media']['status']
@@ -80,7 +80,15 @@ with open("anime_data.txt", "w") as file_temp:
     json.dump(combined_data, file_temp, ensure_ascii=False, indent=4)
     # tuples in python, mal_tracked and anilist_tracked, are converted to arrays in json.
 
-# def fetch_status(anime_id):
-#   variables = {'id': idAnilist}
-#   response = requests.post(url, json={'query': query, 'variables': variables})
-#   read_data = json.loads(response.text)
+# def fetch_status(variables):
+#   response = requests.post(url, json={'query': ANIME_QUERY, 'variables': variables})
+#   data_readable = json.loads(response.text)
+#   anime_data = {
+#     'anime_name' : data_readable['data']['Media']['title']['romaji'],
+#     'anime_status' : data_readable['data']['Media']['status'],
+#     'anime_year' : data_readable['data']['Media']['seasonYear'],
+#     'anime_enddate' : data_readable['data']['Media']['endDate']
+#   }
+#   return anime_data
+
+# if 
