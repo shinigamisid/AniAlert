@@ -5,6 +5,7 @@ from time import sleep
 idMals = []
 idAnilists = []
 animefile_path = "/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime_to_track.txt"
+anialert_path = "/Users/shinismac98/Documents/GitHub/AniAlert/"
 
 # fetches data from the txt file where you have the anime you want to track as MAL or AniList links
 with open(animefile_path, "r+") as anime_tracker:
@@ -69,7 +70,7 @@ for idAnilist in idAnilists:
     query_variable = {'id': idAnilist}
     combined_data.append(fetch_data(query_variable))
 
-with open("anime_data.txt", "w") as file_temp:
+with open(f"{anialert_path}/anime_data.txt", "w") as file_temp:
     # https://docs.python.org/3/library/json.html
     # data_readable and json.dump are used because response.text by default returns utf-8 characters as strings that look like this: \u2019
     json.dump(combined_data, file_temp, ensure_ascii=False, indent=4)
