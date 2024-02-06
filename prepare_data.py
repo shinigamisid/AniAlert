@@ -4,9 +4,10 @@ from time import sleep
 
 idMals = []
 idAnilists = []
+animefile_path = "/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime_to_track.txt"
 
 # fetches data from the txt file where you have the anime you want to track as MAL or AniList links
-with open("/Users/shinismac98/Library/Mobile Documents/com~apple~CloudDocs/anime_to_track.txt", "r+") as anime_tracker:
+with open(animefile_path, "r+") as anime_tracker:
     for anime in anime_tracker:
         if 'myanimelist' in anime:
             link_separated = anime.rstrip().split('/')
