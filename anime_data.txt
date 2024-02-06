@@ -108,5 +108,16 @@
             "month": null,
             "day": null
         }
+    },
+    {
+        "anime_id": 151970,
+        "anime_name": "Shangri-La Frontier",
+        "anime_status": "RELEASING",
+        "anime_year": 2023,
+        "anime_enddate": {
+            "year": null,
+            "month": null,
+            "day": null
+        }
     }
 ]
