@@ -1,4 +1,4 @@
-#!/Users/shinismac98/Documents/GitHub/AniAlert/venv/bin/python3
+#!/Users/shinismac98/Documents/GitHub/AniAlert/venv/bin/python3.11
 '''
 This program handles the notification part.
 It reads the finished_airing.txt file, a list of anime that have finished airing.
