@@ -7,7 +7,7 @@
         "anime_enddate": {
             "year": 2024,
             "month": 3,
-            "day": 24
+            "day": 31
         }
     },
     {
@@ -33,28 +33,6 @@
         }
     },
     {
-        "anime_id": 136804,
-        "anime_name": "Kono Subarashii Sekai ni Shukufuku wo! 3",
-        "anime_status": "NOT_YET_RELEASED",
-        "anime_year": 2024,
-        "anime_enddate": {
-            "year": null,
-            "month": null,
-            "day": null
-        }
-    },
-    {
-        "anime_id": 163139,
-        "anime_name": "Boku no Hero Academia 7",
-        "anime_status": "NOT_YET_RELEASED",
-        "anime_year": 2024,
-        "anime_enddate": {
-            "year": null,
-            "month": null,
-            "day": null
-        }
-    },
-    {
         "anime_id": 154587,
         "anime_name": "Sousou no Frieren",
         "anime_status": "RELEASING",
@@ -73,7 +51,7 @@
         "anime_enddate": {
             "year": 2024,
             "month": 3,
-            "day": 23
+            "day": 30
         }
     },
     {
@@ -85,28 +63,6 @@
             "year": 2024,
             "month": 3,
             "day": 27
-        }
-    },
-    {
-        "anime_id": 156822,
-        "anime_name": "Tensei Shitara Slime Datta Ken 3rd Season",
-        "anime_status": "NOT_YET_RELEASED",
-        "anime_year": 2024,
-        "anime_enddate": {
-            "year": null,
-            "month": null,
-            "day": null
-        }
-    },
-    {
-        "anime_id": 166240,
-        "anime_name": "Kimetsu no Yaiba: Hashira Geiko-hen",
-        "anime_status": "NOT_YET_RELEASED",
-        "anime_year": 2024,
-        "anime_enddate": {
-            "year": null,
-            "month": null,
-            "day": null
         }
     }
 ]
